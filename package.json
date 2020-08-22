@@ -1,0 +1,49 @@
+{
+  "name": "covid19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "@apollo/react-ssr": "^4.0.0",
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "apollo-boost": "^0.4.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-datasource-rest": "^0.9.3",
+    "apollo-link-http": "^1.5.17",
+    "apollo-server-micro": "^2.16.1",
+    "axios": "^0.20.0",
+    "emotion-theming": "^10.0.27",
+    "framer-motion": "^2.4.3-beta.2",
+    "graphql-tag": "^2.11.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "lqip-loader": "^2.2.0",
+    "next": "^9.5.2",
+    "next-optimized-images": "^2.6.2",
+    "next-with-apollo": "^5.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webp-loader": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "typescript": "^4.0.2"
+  }
+}
