@@ -45,6 +45,30 @@ class CovidAPI extends RESTDataSource implements ICovidAPI {
       throw new Error(error);
     }
   }
+
+  public async getDayOneDataPerCountry(country, status) {
+    try {
+      const response = await this.get(
+        `${this.baseURL}/dayone/country/${country}/status/${status}`
+      );
+
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  public async getDayOneTotalPerCountry(country) {
+    try {
+      const response = await this.get(
+        `${this.baseURL}/total/dayone/country/${country}`
+      );
+
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 }
 
 export default CovidAPI;

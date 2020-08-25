@@ -9,5 +9,9 @@ module.exports = withOptimizedImages({
   webpack(config) {
     config.resolve.alias.images = path.join(__dirname, "images");
     return config;
+  },
+  optimizeImagesInDev: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")]
   }
 });

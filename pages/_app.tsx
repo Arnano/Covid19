@@ -1,5 +1,6 @@
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 import { Heading } from "@chakra-ui/core";
+import "../styles/_search.scss";
 
 const AppComponent = ({ Component, pageProps }) => {
   return (

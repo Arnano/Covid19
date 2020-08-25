@@ -1,13 +1,16 @@
-export const Image = ({ src }) => (
+import Search from "../components/Search";
+
+export const Image = ({ src, onHandleClick, isLoading }) => (
   <div
     className="image-container"
     style={{
       position: "relative",
       width: "960px",
       height: "500px",
-      margin: "0 auto"
+      margin: "20px auto"
     }}
   >
+    <Search onHandleClick={onHandleClick} isLoading={isLoading} />
     <img className="blur-image" src={require(`images/${src}?lqip`)} />
     <img src={require(`images/${src}`)} />
     <style jsx>{`
