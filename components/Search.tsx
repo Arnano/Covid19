@@ -1,7 +1,5 @@
-import { GET_COUNTRIES } from "../lib/Queries/GET_COUNTRIES";
-import { useQuery } from "@apollo/react-hooks";
-import withApollo from "../lib/withApollo";
 import { useState } from "react";
+import { Logo } from "../components/Logo";
 
 import {
   Spinner,
@@ -15,25 +13,13 @@ import {
   PseudoBox
 } from "@chakra-ui/core";
 
-const Search = ({ onHandleClick, isLoading }) => {
-  const { loading: countriesLoading, data: countriesData } = useQuery(
-    GET_COUNTRIES
-  );
+const Search = ({ onHandleClick, countriesLoading, countriesData }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setOpen] = useState(false);
   const [list, setList] = useState([]);
   const [slug, setSlug] = useState("");
 
-  if (countriesLoading || !countriesData)
-    return (
-      <Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="blue.500"
-        size="xl"
-      />
-    );
+  if (countriesLoading || !countriesData) return <Logo />;
 
   const onHandleChange = e => {
     const searchValue = e.target.value;
@@ -53,24 +39,24 @@ const Search = ({ onHandleClick, isLoading }) => {
 
   return (
     <div className="search">
-      <InputGroup size="md" maxWidth="960px" margin="20px auto">
+      <InputGroup size="md" maxWidth="960px">
         <InputLeftElement children={<Icon name="search" color="gray.300" />} />
         <Input
+          backgroundColor="gray.100"
           pr="4.5rem"
           type={"text"}
           onChange={e => onHandleChange(e)}
           value={searchTerm}
           placeholder="Search"
         />
-        <InputRightElement width="4.5rem">
+        <InputRightElement width="unset">
           <Button
             h="2.5rem"
             size="sm"
-            variantColor="teal"
+            variantColor="green"
             borderBottomLeftRadius="0"
             borderTopLeftRadius="0"
             variant="solid"
-            isLoading={isLoading}
             onClick={() => onHandleClick(slug)}
           >
             Search
@@ -108,4 +94,5 @@ const Search = ({ onHandleClick, isLoading }) => {
   );
 };
 
-export default withApollo(Search);
+// export default withApollo(Search);
+export default Search;

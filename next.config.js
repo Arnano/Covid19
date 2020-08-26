@@ -1,17 +1,11 @@
-const withOptimizedImages = require("next-optimized-images");
 const path = require("path");
 
-module.exports = withOptimizedImages({
+module.exports = {
   env: {
     BASE_URL: process.env.BASE_URL,
     COVID_API_URL: process.env.API_URL
   },
-  webpack(config) {
-    config.resolve.alias.images = path.join(__dirname, "images");
-    return config;
-  },
-  optimizeImagesInDev: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")]
   }
-});
+};

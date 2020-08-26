@@ -1,5 +1,5 @@
 import { withAnimatePresence } from "../lib/withAnimatePresence";
-import { Spinner } from "@chakra-ui/core";
+import { Logo } from "../components/Logo";
 import { VictoryChart, VictoryBar, VictoryTheme, VictoryAxis } from "victory";
 import moment from "moment";
 
@@ -10,16 +10,7 @@ const color = {
 };
 
 const DayOnePerCountry = ({ status, data }) => {
-  if (!data.getDayOneTotalPerCountry)
-    return (
-      <Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="blue.500"
-        size="xl"
-      />
-    );
+  if (!data.getDayOneTotalPerCountry) return <Logo />;
 
   const stuff = data.getDayOneTotalPerCountry.map(item => ({
     cases: item[status],
@@ -28,6 +19,9 @@ const DayOnePerCountry = ({ status, data }) => {
 
   return (
     <>
+      <p>
+        Total {status}: {Math.max(...stuff.map(item => item.cases))}
+      </p>
       <VictoryChart
         theme={VictoryTheme.material}
         width={960}

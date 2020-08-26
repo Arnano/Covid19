@@ -1,15 +1,15 @@
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
-import { Heading } from "@chakra-ui/core";
-import "../styles/_search.scss";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import "../styles/_main.scss";
 
 const AppComponent = ({ Component, pageProps }) => {
   return (
     <ThemeProvider>
       <CSSReset />
-      <Heading as="h1" size="2xl">
-        Covid19 tracking App
-      </Heading>
+      <Header />
       <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   );
 };
