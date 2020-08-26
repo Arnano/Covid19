@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Logo } from "../components/Logo";
 
 import {
-  Spinner,
   Input,
   InputGroup,
   InputLeftElement,
@@ -94,5 +93,4 @@ const Search = ({ onHandleClick, countriesLoading, countriesData }) => {
   );
 };
 
-// export default withApollo(Search);
 export default Search;
